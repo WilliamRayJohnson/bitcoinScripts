@@ -37,11 +37,13 @@ for block in range(blockCount):
                             seconds=(timeToConfirmSec)))
     blockConfirmTime = datetime.datetime.fromtimestamp(
             currentBlockTime).strftime('%m-%d-%Y %H:%M:%S')
-
+    
+    print('-----------------------------------------')
     print("Block %d" % (blockHeight - block,))
     print("Block Confirmed at: %s" % (blockConfirmTime,))
     print("Time to Confirm Block: %s" % (timeToConfirmBlock,))
-    
+print('-----------------------------------------')
+
 if blockCount > 1:
     avgConfirmTime = sum(confirmTimes) / blockCount
     formattedAvg = str(datetime.timedelta(seconds=avgConfirmTime))
